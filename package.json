@@ -1,0 +1,24 @@
+{
+  "name": "kanban_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrichard/kanban_app.git"
+  },
+  "author": "mrichard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrichard/kanban_app/issues"
+  },
+  "homepage": "https://github.com/mrichard/kanban_app#readme",
+  "devDependencies": {
+    "node-libs-browser": "^0.5.2",
+    "webpack": "^1.9.10"
+  }
+}
