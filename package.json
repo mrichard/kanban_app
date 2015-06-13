@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mrichard/kanban_app#readme",
   "devDependencies": {
     "node-libs-browser": "^0.5.2",
-    "webpack": "^1.9.10"
+    "webpack": "^1.9.10",
+    "webpack-dev-server": "^1.9.0"
   }
 }
