@@ -47,6 +47,15 @@ if (TARGET === 'dev') {
 			'webpack-dev-server/client?http://' + IP + ':' + PORT,
 			'webpack/hot/dev-server'
 		],
+		module: {
+			preLoaders: [
+				{
+					test: /\.jsx|\.js$/,
+					loaders: ['eslint-loader', 'jscs-loader'],
+					include: path.join(ROOT_PATH, 'app')
+				}
+			]
+		},
 		output: {
 			path: __dirname,
 			filename: 'bundle.js',

@@ -1,7 +1,7 @@
 var _ = require('lodash');
 
 module.exports = function (source, target) {
-	
+
 	function joinArrays (a, b) {
 
 		if (_.isArray(a) && _.isArray(b)) {
@@ -15,6 +15,4 @@ module.exports = function (source, target) {
 
 
 	return _.merge(target, source, joinArrays);
-
-
-}
+};

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "TARGET=build webpack",
+    "lint": "eslint . --ext .js --ext.jsx",
     "start": "TARGET=dev node dev_server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,7 +21,11 @@
   "homepage": "https://github.com/mrichard/kanban_app#readme",
   "devDependencies": {
     "css-loader": "^0.14.5",
+    "eslint-loader": "^0.12.0",
+    "esprima-fb": "^15001.1.0-dev-harmony-fb",
     "html-webpack-plugin": "^1.5.2",
+    "jscs": "^1.13.1",
+    "jscs-loader": "^0.1.0",
     "node-libs-browser": "^0.5.2",
     "style-loader": "^0.12.3",
     "webpack": "^1.9.10",
