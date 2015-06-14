@@ -1,5 +1,8 @@
 var path = require('path');
-var merge = require('./lib/merge');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var merge = require('./utils/merge');
 
 var TARGET = process.env.TARGET;
 var ROOT_PATH = path.resolve(__dirname);
@@ -23,11 +26,35 @@ var common = {
 var mergeConfig = merge.bind(null, common);
 
 if (TARGET === 'build') {
-	module.exports = mergeConfig({});
+	module.exports = mergeConfig({
+		plugins: [
+			new HtmlWebpackPlugin({
+				title: 'KanBan Application',
+				template: path.join(ROOT_PATH, 'app/index.tpl')
+			})
+		]
+	});
 }
 
 if (TARGET === 'dev') {
+	var IP = '0.0.0.0';
+	var PORT = 8080;
+
 	module.exports = mergeConfig({
-		entry: ['webpack/hot/dev-server']
+		ip: IP,
+		port: PORT,
+		entry: [
+			'webpack-dev-server/client?http://' + IP + ':' + PORT,
+			'webpack/hot/dev-server'
+		],
+		output: {
+			path: __dirname,
+			filename: 'bundle.js',
+			publicPath: '/dev_server/'
+		},
+		plugins: [
+			new webpack.HotModuleReplacementPlugin(),
+			new webpack.NoErrorsPlugin()
+		]
 	});
 }
