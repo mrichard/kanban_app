@@ -50,7 +50,7 @@ if (TARGET === 'dev') {
 		module: {
 			preLoaders: [
 				{
-					test: /\.jsx|\.js$/,
+					test: /\.(js|jsx)$/,
 					loaders: ['eslint-loader', 'jscs-loader'],
 					include: path.join(ROOT_PATH, 'app')
 				}
