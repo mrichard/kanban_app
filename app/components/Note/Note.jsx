@@ -5,6 +5,6 @@ export default class Note extends React.Component {
         return 'Note';
     }
     render () {
-        return <div>Hello World</div>;
+        return <div>{this.props.task}</div>;
     }
 }
